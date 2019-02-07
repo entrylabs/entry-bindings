@@ -1,6 +1,5 @@
-# entrylabs/bindings
+# @entrylabs/bindings
 #### forked from [@serialport/Bindings](https://serialport.io/docs/api-bindings)
-# @serialport/Bindings
 
 ## 왜 forked 되었나요?
 
@@ -13,3 +12,24 @@ src/serialport_win.cpp 의 `EIO_Open()` 의 `data->rtscts` 의 통신 방식이 
 
 본 라이브러리는 entry-hw 및 entry-offline 에서 사용되기 위해 수정되었습니다.
 해당 라이브러리에서 본 라이브러리를 설치 후 컴파일을 거쳐야 합니다.
+
+라이브러리 설치 후,  
+`electron-rebuild -v 4.0.0` 으로 설치 가능합니다. 버전은 변경될 수 있습니다.
+
+본 라이브러리는 [@serialport/Stream](https://serialport.io/docs/en/api-stream) 에 종속됩니다.
+
+함수는
+```javascript
+const SerialPort = require('@serialport/stream');
+SerialPort.Binding = require('@entrylabs/entry-bindings');
+const sp = new SerialPort();
+```
+
+혹은
+```javascript
+const SerialPort = require('@serialport/stream');
+const binding = require('@entrylabs/entry-bindings');
+const sp = new SerialPort('/dev/tty.XXX' || 'COM1', { Binding: binding });
+```
+
+과 같이 사용할 수 있습니다.
