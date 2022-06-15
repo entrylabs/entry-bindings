@@ -1,5 +1,5 @@
 # @entrylabs/bindings
-#### forked from [@serialport/Bindings](https://serialport.io/docs/api-bindings)
+#### forked from [@serialport/Bindings](https://serialport.io/docs/api-bindings-cpp)
 
 ## 왜 forked 되었나요?
 
@@ -16,7 +16,7 @@ src/serialport_win.cpp 의 `EIO_Open()` 의 `data->rtscts` 의 통신 방식이 
 라이브러리 설치 후,  
 `electron-rebuild -v 4.0.0` 으로 설치 가능합니다. 버전은 변경될 수 있습니다.
 
-본 라이브러리는 [@serialport/Stream](https://serialport.io/docs/en/api-stream) 에 종속됩니다.
+본 라이브러리는 [@serialport/Stream](https://serialport.io/docs/api-stream) 에 종속됩니다.
 
 함수는
 ```javascript
